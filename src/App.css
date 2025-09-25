@@ -1,0 +1,62 @@
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow:
+    0 0 7px #00ffff,
+    0 0 10px #00ffff,
+    0 0 21px #00ffff,
+    0 0 42px #00c3ff,
+    0 0 82px #00c3ff,
+    0 0 92px #00c3ff,
+    0 0 102px #00c3ff,
+    0 0 151px #00c3ff;
+}
+
+.bg-dark-transparent {
+  background-color: rgba(10, 10, 30, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.neon-border {
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.7), inset 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.nav-pills .nav-link {
+  color: #00ffff;
+  border: 1px solid transparent;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #00ffff;
+  color: #0a0a1a;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.nav-pills .nav-link:not(.active):hover {
+  border-color: #00ffff;
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+.btn-primary {
+    background-color: #00c3ff;
+    border-color: #00c3ff;
+    color: #0a0a1a;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
