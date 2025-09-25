@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# Gemini Image App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web construida con React, Vite y TypeScript que utiliza la API de Google Gemini para realizar una variedad de tareas de análisis y generación de texto relacionadas con imágenes.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Funciones Gratuitas
+- **Analizar Imagen:** Sube una imagen y la IA genera un prompt descriptivo.
+- **Mejorar Prompt:** Refina un prompt simple para obtener mejores resultados.
+- **Variaciones (Pro):** A partir de una idea simple, genera 5 variaciones de prompts creativos usando el modelo `gemini-2.5-pro`.
+- **Paleta de Colores:** Extrae la paleta de colores dominantes de una imagen y muestra sus códigos HEX.
+- **Lluvia de Ideas:** Genera una lista de conceptos categorizados a partir de una sola palabra clave.
+- **Narrador de Imágenes:** Crea un poema o un micro-relato inspirado en una imagen.
 
-## React Compiler
+### Funciones Premium (Requieren Plan de Pago)
+- **Editar Imagen:** Modifica una imagen existente a partir de una instrucción de texto.
+- **Crear Imagen:** Genera una imagen desde cero a partir de un prompt.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Configuración
 
-## Expanding the ESLint configuration
+Para que la aplicación funcione, necesitas proporcionar tu propia clave de API de Google Gemini.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  En la raíz del proyecto, busca el archivo llamado `.env.example`.
+2.  Haz una copia de este archivo y renómbrala a `.env`.
+3.  Abre el nuevo archivo `.env` y reemplaza el marcador de posición `YOUR_API_KEY_HERE` con tu clave de API real.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+El archivo `.env` está incluido en el `.gitignore`, por lo que tu clave secreta nunca se subirá a GitHub.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Cómo Empezar
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.  **Ejecutar el servidor de desarrollo:**
+    Puedes usar el script que creamos:
+    ```bash
+    # Simplemente haz doble clic en el archivo start-dev.bat en Windows
+    ```
+    O ejecutar el comando manualmente:
+    ```bash
+    npm run dev
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  Abre la URL local (normalmente `http://localhost:5173`) en tu navegador.
